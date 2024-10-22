@@ -1,0 +1,44 @@
+.container {
+    max-width: 1190px;
+    padding-inline: 15px;
+    margin-inline: auto;
+}
+
+.visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    margin: -1px !important;
+    border: 0 !important;
+    padding: 0 !important;
+    white-space: nowrap !important;
+    clip-path: inset(100%) !important;
+    clip: rect(0 0 0 0) !important;
+    overflow: hidden !important;
+}
+
+.hidden-mobile {
+    @include mobile {
+        display: none !important;
+    }
+}
+
+.button {
+    @include flex-center(true);
+
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.05em;           
+}
+
+.logo {
+    transition: var(--transition-duration);
+
+    @include hover {
+        &:hover {
+            opacity: 0.7;
+        }        
+    }
+}
+
