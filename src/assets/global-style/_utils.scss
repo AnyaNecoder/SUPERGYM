@@ -23,22 +23,47 @@
     }
 }
 
-.button {
-    @include flex-center(true);
-
-    font-size: 12px;
-    text-transform: uppercase;
-    font-weight: 700;
-    letter-spacing: 0.05em;           
-}
-
 .logo {
+    color: var(--color-light);
     transition: var(--transition-duration);
 
     @include hover {
         &:hover {
             opacity: 0.7;
         }        
+    }    
+}
+
+.logo svg {
+    @include mobile { 
+        width: 82px;
+        height: 17px;            
+    }       
+}
+
+.section {
+    padding-block: var(--section-padding-y);
+
+    &--grey-bg {
+        background-color: var(--color-light-grey);
     }
+
+    @include tablet {
+        padding-block: 100px; 
+    }
+
+    @include mobile-s {
+        padding-block: 70px; 
+    }
+}
+
+.title {
+    @include fluid-text(49, 32);
+
+    font-family: var(--font-family-accent);
+    letter-spacing: 0.03em;    
+    white-space: nowrap;
+    text-transform: uppercase;
+
 }
 
