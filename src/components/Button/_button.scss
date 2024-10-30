@@ -6,7 +6,11 @@
     font-weight: 700;
     letter-spacing: 0.05em;
     transition: var(--transition-duration);
-    white-space: nowrap; 
+    white-space: nowrap;
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;   
+
     
     &--border-light {
         border: var(--border);
@@ -20,12 +24,14 @@
     }
 
     &--border-dark {
-        border: 2px solid var(--color-dark-blue);
+        border: 2px solid var(--color-dark-blue);                
+        
 
         @include hover {
             &:hover {
                 background: linear-gradient(97.05deg, #ED0233 17.6%, #003EB7 95.31%);                
-                border: 2px solid transparent;
+                border: 2px solid transparent;                
+                color: var(--color-light);                                                                 
             }        
         }
     }
