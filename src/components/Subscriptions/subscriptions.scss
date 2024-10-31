@@ -1,6 +1,19 @@
 .subscriptions-bg {
     background: url(../../assets/images/subscriptions-plates-bg-desktop.png) right 0 bottom -34% no-repeat;
     background-color: var(--color-light-grey);
+
+    @include desktop {
+        background-position: right 0 bottom -20%;
+    }
+
+    @include tablet-s {
+        background: url(../../assets/images/subscriptions-plates-bg-mobile.png) right 0 bottom -8% no-repeat;
+        background-color: var(--color-light-grey);
+    }
+
+    @include mobile-s {
+        background-image: none;        
+    }
 }
 
 .subscriptions {
@@ -12,6 +25,15 @@
     
     &__title {    
         text-align: center;           
+    }
+
+
+    @include tablet-s {
+        row-gap: 45px;
+    }
+
+    @include mobile-s {
+        row-gap: 35px;
     }
 }
 

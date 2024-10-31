@@ -7,8 +7,11 @@ import { Tabs } from './src/components/Tabs/tabs';
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    Equipment();
-    Tabs();
+    const equipment = document.querySelector('.js-equipment');
+    Equipment(equipment);
+
+    const tabs = document.querySelector('.js-tabs');
+    Tabs(tabs);
 
 })
 

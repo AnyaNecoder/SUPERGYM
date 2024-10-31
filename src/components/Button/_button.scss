@@ -9,7 +9,7 @@
     white-space: nowrap;
     background-color: transparent;
     cursor: pointer;
-    outline: none;   
+    outline: none;      
 
     
     &--border-light {
@@ -29,9 +29,13 @@
 
         @include hover {
             &:hover {
-                background: linear-gradient(97.05deg, #ED0233 17.6%, #003EB7 95.31%);                
+                background: linear-gradient(97.05deg, #ED0233 17.6%, #003EB7 95.31%);
+                // border: none;
+                // padding: 29px 47px;
+                // outline: 2px solid transparent;                
                 border: 2px solid transparent;                
-                color: var(--color-light);                                                                 
+                color: var(--color-light);
+                
             }        
         }
     }
