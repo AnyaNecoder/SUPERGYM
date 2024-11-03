@@ -1,0 +1,175 @@
+.buy-modal {
+    background-color: var(--color-dark-blue);     
+    max-width: 500px;
+    width: 100%;    
+    border: none;
+    border-radius: 30px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: fixed;    
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(100%) rotate(-45deg);
+    transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.5s ease-in-out;
+
+    
+    &.is-animated {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0) rotate(0);
+    }    
+
+
+    @include mobile-s {
+        padding: 5px;   }    
+
+
+    &::backdrop {
+        background-color: rgba(0, 0, 0, 0.7);
+        filter: blur(15px);        
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        row-gap: 5px;        
+        padding: 35px 40px;
+        color: var(--color-light);
+
+        & label {            
+            font-size: 14px;
+            color: var(--color-grey-alt);             
+        }
+    }
+
+    &__close-btn {
+        @include square(36px);
+
+        align-self: end;
+        position: relative;
+        margin-bottom: 20px;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        background-color: transparent;        
+
+        @include hover {
+            opacity: 0.6;
+        }
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            width: 70%;
+            height: 2px;
+            background-color: var(--color-light);
+            border-radius: 5px;
+        }
+
+        &::before {
+            rotate: 45deg;
+        }
+
+        &::after {
+            rotate: -45deg;
+        }
+    }
+
+    &__input {
+        height: 40px;
+        border: none;                      
+        border-bottom: 1px solid #74819C;
+        color: var(----color-light);        
+        margin-bottom: 20px;
+        outline: transparent;
+        background-color: transparent;
+
+
+        &::placeholder {
+            color: var(--color-light);
+        }
+
+        &:focus {
+            scale: 1.05;            
+            box-shadow: 0 2px 2px rgba(255, 255, 255, 0.5);
+        }
+        
+        @include hover {
+            scale: 1.02;
+            border-width: 2px;           
+        }
+    }
+
+    &__user-name,
+    &__user-last-name,
+    &__user-phone,
+    &__user-email {
+        position: absolute;
+        transition-duration: var(--transition-duration);
+
+    }
+
+    &__user-name {        
+        top: 25%;
+        left: 12%;               
+    }
+
+    &__user-last-name {        
+        top: 37%;
+        left: 12%;         
+    }
+
+    &__user-phone {        
+        top: 50%;
+        left: 12%;        
+    }
+
+    &__user-email {        
+        top: 63%;
+        left: 12%;        
+    }
+
+    &__submit-btn {
+        padding: 21px;
+        width: 100%;
+        margin-top: 20px;        
+    }
+
+    &__input:not(:placeholder-shown) + &__user-name,
+    &__input:not(:placeholder-shown) + &__user-last-name,
+    &__input:not(:placeholder-shown) + &__user-phone,
+    &__input:not(:placeholder-shown) + &__user-email,    
+    &__input:hover + &__user-name,
+    &__input:hover + &__user-last-name,
+    &__input:hover + &__user-phone,
+    &__input:hover + &__user-email {        
+        translate: 0.1em -1.70em;
+    }
+
+    // &__input:not(:focus):not(:hover):placeholder-shown + &__user-phone {
+    //     translate: 0 0; 
+    // }
+}
+
+
+// .shifted {
+//     translate: 0.1em -1.70em;
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

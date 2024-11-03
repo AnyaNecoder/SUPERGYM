@@ -14,5 +14,8 @@
     "gh-pages": "^6.2.0",
     "sass": "^1.79.5",
     "vite": "^5.4.8"
+  },
+  "dependencies": {
+    "inputmask": "^5.0.9"
   }
 }
