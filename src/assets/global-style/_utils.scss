@@ -68,14 +68,26 @@
 }
 
 .border-gradient {
-    border: 7px solid var(--color-light);    
+    border: 7px solid var(--color-light);
+    
+    &:focus {
+        border: 7px solid;
+        border-image: linear-gradient(141deg, #d10a42 22%, #103aae 74%);
+        border-image-slice: 7;
+    }
 
     @include hover {
         &:hover {
             border: 7px solid;
             border-image: linear-gradient(141deg, #d10a42 22%, #103aae 74%);
             border-image-slice: 7;                                    
-        }        
+        }
+        
+        &:active {
+            border: 7px solid;
+            border-image: linear-gradient(141deg, #d10a42 22%, #103aae 74%);
+            border-image-slice: 7;
+        }
     }      
 }
 
