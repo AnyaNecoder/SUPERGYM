@@ -5,11 +5,11 @@
     text-transform: uppercase;
     font-weight: 700;
     letter-spacing: 0.05em;
-    transition: var(--transition-duration);
+    transition-duration: var(--transition-duration);
     white-space: nowrap;
     background-color: transparent;
     cursor: pointer;
-    // outline: none;      
+    outline: none;      
 
     
     &--border-light {
@@ -25,7 +25,7 @@
     }
 
     &--border-dark {
-        border: 2px solid var(--color-dark-blue);                
+        border: 2px solid var(--color-dark-blue);                            
         
 
         @include hover {

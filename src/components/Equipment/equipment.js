@@ -5,18 +5,15 @@ export const Equipment = (equipment) => {
         
         
       const iframe = document.createElement('iframe');
-      iframe.setAttribute('width', '360');
-      iframe.setAttribute('height', '230');
+      iframe.setAttribute('width', '364');
+      iframe.setAttribute('height', '228');
       iframe.setAttribute('src', youtubeUrl);
       iframe.setAttribute('frameBorder', '0');
-      iframe.setAttribute('allow', 'clipboard-write; autoplay');
-      iframe.setAttribute('allowfullScreen', true);
-      
+      iframe.setAttribute('allow', 'autoplay');
+      iframe.setAttribute('allowfullScreen', true);      
         
       videoWrapper.innerHTML = '';
       videoWrapper.appendChild(iframe);
   });
 }
-
-
 

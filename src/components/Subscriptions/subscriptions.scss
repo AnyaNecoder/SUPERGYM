@@ -40,8 +40,8 @@
 
     @include tablet-s {
         background-image: url('../../assets/images/subscriptions-plates-bg-mobile.png');
-        bottom: -5%;
-        
+        width: 345px;              
+        bottom: -5%;        
     }
 
     @include mobile-s {

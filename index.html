@@ -63,12 +63,12 @@
           </div>
           <div class="equipment__image-wrapper">
             <picture class="equipment__image">
-              <source media="(max-width: 1040px)" srcset="src/assets/images/equipment-gym-tablet.jpg" width="678" height="345">
-              <source media="(max-width: 740px)" srcset="src/assets/images/equipment-gym-mobile.jpg" width="320" height="313">                                                    
+              <source media="(max-width: 350px)" srcset="src/assets/images/equipment-gym-mobile.jpg" width="320" height="313">
+              <source media="(max-width: 1040px)" srcset="src/assets/images/equipment-gym-tablet.jpg" width="678" height="345">                                                                  
               <img src="./src/assets/images/equipment-gym.jpg" alt="Обстановка тренажерного зала" width="660" height="401" loading="lazy">
             </picture>
             <div class="equipment__video-wrapper">
-              <video class="equipment__video" src="" width="364" height="228" poster="./src/assets/images/video-placeholder.jpg"></video>
+              <video class="equipment__video" src="" poster="./src/assets/images/video-placeholder.jpg"></video>
               <button class="equipment__video-play-button" type="button" aria-label="Воспроизвести видео"></button>           
             </div>
           </div>                
@@ -228,29 +228,7 @@
           <article class="instructors__banner-event banner-event">
             <div class="banner-event__info">
               <div class="banner-event__top">
-                <h2 class="banner-event__title">SUPER GAMES</h2>
-                <!-- <table class="banner-event__table">
-                  <tr>
-                    <td class="table--padding" colspan="2">Дата</td>
-                    <td></td>                    
-                  </tr>
-                  <tr>
-                    <td rowspan="2">7</td>
-                    <td class="table--font-small">Марта</td>                    
-                  </tr>
-                  <tr>
-                    <td class="table--font-small">2019</td>
-                    <td></td>                    
-                  </tr>
-                  <tr>
-                    <td class="table--padding" colspan="2">Время</td>
-                    <td></td>                    
-                  </tr>
-                  <tr>
-                    <td colspan="2">12:00</td>
-                    <td></td>                    
-                  </tr>
-                </table> -->
+                <h2 class="banner-event__title">SUPER GAMES</h2>                
                 <div class="banner-event__wrapper">
                   <dl class="banner-event__date">
                     <dt>Дата</dt>
@@ -267,19 +245,15 @@
             </div>
             <picture class="banner-event__image">
               <source media="(max-width: 360px)" srcset="src/assets/images//сrossfit-man-mobile.jpg" width="315" height="292">                           
-              <source media="(max-width: 970px)" srcset="src/assets/images//сrossfit-man-tablet.jpg" width="386" height="292">                                                    
+              <!-- <source media="(max-width: 590px)" srcset="src/assets/images//сrossfit-man-tablet.jpg" width="386" height="292">                                                     -->
               <img src="src/assets/images/сrossfit-man-desktop.jpg" alt="Мужчина, выполняющий динамичное упражнение из дисциплины CrossFit, в облаке магнезии" width="660" height="500" loading="lazy">
             </picture>
           </article>
           <div class="instructors__slider">
-
           </div>
-
         </div>
 
-      </section>
-
-      
+      </section> 
         
 
     
@@ -304,19 +278,30 @@
     <dialog class="buy-modal" aria-label="Форма покупки абонемента">      
       <form class="buy-modal__form" method="dialog">
         <button class="buy-modal__close-btn js-close-btn" type="reset" aria-label="Закрыть модальное окно" formmethod="dialog"></button>
-                  
-        <input class="buy-modal__input" type="text" id="first-name" name="firstName" placeholder required>
-        <label class="buy-modal__user-name" for="first-name">Имя</label>
-                  
-        <input class="buy-modal__input" type="text" id="last-name" name="lastName" placeholder required>
-        <label class="buy-modal__user-last-name" for="last-name">Фамилия</label>
-                  
-        <input class="buy-modal__input" type="tel" id="phone" name="phone" title="Введите номер телефона" placeholder required>
-        <label class="buy-modal__user-phone" for="phone">Номер телефона</label>
-        
-        <input class="buy-modal__input" type="email" id="email" name="email" title="Введите ваш email" placeholder required>
-        <label class="buy-modal__user-email" for="email">Email</label>
-          
+        <div class="buy-modal__info">
+          <h3 class="buy-modal__title"></h3>
+          <p class="buy-modal__period"></p>
+          <div class="buy-modal__price-wrapper">
+            <span class="buy-modal__price"></span>
+            <span>&#8381;</span>            
+          </div>                   
+        </div>                
+        <div class="buy-modal__input-wrapper">
+          <input class="buy-modal__input" type="text" id="first-name" name="firstName" title="Введите ваше имя" required>
+          <label class="buy-modal__user-name" for="first-name">Имя</label>
+        </div>                  
+        <div class="buy-modal__input-wrapper">
+          <input class="buy-modal__input" type="text" id="last-name" name="lastName" title="Введите вашу фамилию" required>
+          <label class="buy-modal__user-last-name" for="last-name">Фамилия</label>
+        </div>                         
+        <div class="buy-modal__input-wrapper">
+          <input class="buy-modal__input" type="tel" id="phone" name="phone" title="Введите номер телефона" required>
+          <label class="buy-modal__user-phone" for="phone">Номер телефона</label>
+        </div>                
+        <div class="buy-modal__input-wrapper">
+          <input class="buy-modal__input" type="email" id="email" name="email" title="Введите ваш email" required>
+          <label class="buy-modal__user-email" for="email">Email</label>
+        </div>                  
         <button class="buy-modal__submit-btn button button--border-light" type="submit">Перейти к оплате</button>
       </form>
     </dialog> 

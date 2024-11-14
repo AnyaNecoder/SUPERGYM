@@ -1,10 +1,34 @@
+@keyframes underline-grow {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes highlight-sweep {
+    0% {
+        left: -50%;
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    100% {
+        left: 100%; 
+        opacity: 0;
+    }
+}
+
+
+
 .buy-modal {
     background-color: var(--color-dark-blue);     
     max-width: 500px;
     width: 100%;    
     border: none;
-    border-radius: 30px;
-    padding: 20px;
+    border-radius: 30px;    
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     position: fixed;    
     opacity: 0;
@@ -29,12 +53,9 @@
         filter: blur(15px);        
     }
 
-    &__form {
-        display: flex;
-        flex-direction: column;
-        row-gap: 5px;        
-        padding: 35px 40px;
-        color: var(--color-light);
+    &__form {               
+        padding: 70px 40px 50px;
+        color: var(--color-light);        
 
         & label {            
             font-size: 14px;
@@ -44,10 +65,10 @@
 
     &__close-btn {
         @include square(36px);
-
-        align-self: end;
-        position: relative;
-        margin-bottom: 20px;
+        
+        position: absolute;
+        top: 5%;
+        right: 10%;        
         cursor: pointer;
         border: none;
         outline: none;
@@ -78,86 +99,110 @@
         }
     }
 
-    &__input {
+    &__input-wrapper {
+        position: relative;
+        width: 100%;        
+    }
+
+    &__input {        
+        padding: 5px;
+        width: 100%;
+        border: none;        
         height: 40px;
         border: none;                      
         border-bottom: 1px solid #74819C;
-        color: var(----color-light);        
+        color: var(--color-light);        
         margin-bottom: 20px;
         outline: transparent;
         background-color: transparent;
-
-
-        &::placeholder {
-            color: var(--color-light);
-        }
+        transition: all var(--transition-duration) ease;        
 
         &:focus {
-            scale: 1.05;            
-            box-shadow: 0 2px 2px rgba(255, 255, 255, 0.5);
+            animation: underline-grow 0.6s ease forwards;
         }
-        
-        @include hover {
-            scale: 1.02;
-            border-width: 2px;           
+                
+        &:hover ~ label,
+        &:focus ~ label,
+        &:valid ~ label {
+            font-size: 14px;
+            transform: translateY(-25px);
+            color: #74819C;
         }
-    }
 
+        &:focus,
+        &:active {
+            border-bottom: 2px solid var(--color-grey-alt);
+        }       
+    
+    }
+    
+    
     &__user-name,
     &__user-last-name,
     &__user-phone,
     &__user-email {
         position: absolute;
-        transition-duration: var(--transition-duration);
+        left: 5px;
+        top: 10px;        
+        transition: all 0.5s ease;
+        pointer-events: none;
+    }   
 
-    }
-
-    &__user-name {        
-        top: 25%;
-        left: 12%;               
-    }
-
-    &__user-last-name {        
-        top: 37%;
-        left: 12%;         
-    }
-
-    &__user-phone {        
-        top: 50%;
-        left: 12%;        
-    }
-
-    &__user-email {        
-        top: 63%;
-        left: 12%;        
-    }
-
-    &__submit-btn {
+    &__submit-btn {        
+        position: relative;
         padding: 21px;
         width: 100%;
-        margin-top: 20px;        
+        margin-top: 40px;
+        background-color: transparent;
+        overflow: hidden;
+
+        &::before {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: -50%; 
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(
+                120deg,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(237, 2, 51, 0.8) 50%, 
+                rgba(255, 255, 255, 0) 100%
+            );
+            transform: skewX(-30deg); 
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        &.animate::before {
+            animation: highlight-sweep 3s ease forwards 0.3s;
+        }
+    }
+        
+    &__info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        row-gap: 15px;
+        text-align: center;
+        margin-bottom: 30px;
+        color: var(--color-grey-alt);
     }
 
-    &__input:not(:placeholder-shown) + &__user-name,
-    &__input:not(:placeholder-shown) + &__user-last-name,
-    &__input:not(:placeholder-shown) + &__user-phone,
-    &__input:not(:placeholder-shown) + &__user-email,    
-    &__input:hover + &__user-name,
-    &__input:hover + &__user-last-name,
-    &__input:hover + &__user-phone,
-    &__input:hover + &__user-email {        
-        translate: 0.1em -1.70em;
+    &__price-wrapper {
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--color-accent);        
     }
-
-    // &__input:not(:focus):not(:hover):placeholder-shown + &__user-phone {
-    //     translate: 0 0; 
-    // }
 }
 
 
-// .shifted {
-//     translate: 0.1em -1.70em;
-// }
+
+
+
+
+
 
 
 

@@ -1,62 +1,64 @@
 export const Popup = () => {
-
-    const openBuyButton = document.querySelectorAll('.tabs-content__buy-btn');
-    const closBuyButton = document.querySelector('.buy-modal__close-btn');
-    const buyModal = document.querySelector('.buy-modal');
     
-    openBuyButton.forEach((btn) => {
-        btn.addEventListener('click', () => {            
-            buyModal.showModal();
-            buyModal.classList.add('is-animated');
+    const openBuyButtons = document.querySelectorAll('.tabs-content__buy-btn');
+    const closeModalButton = document.querySelector('.buy-modal__close-btn');
+    const buyModal = document.querySelector('.buy-modal');
+    const submitBtn = buyModal.querySelector('.buy-modal__submit-btn');    
+    
+    const modalTitle = buyModal.querySelector('.buy-modal__title');
+    const modalPeriod = buyModal.querySelector('.buy-modal__period');
+    const modalPrice = buyModal.querySelector('.buy-modal__price');
+
+    
+    const openModal = (title, period, price) => {
+        modalTitle.textContent = title;
+        modalPeriod.textContent = period;
+        modalPrice.textContent = price;
+        
+        buyModal.showModal();
+        buyModal.classList.add('is-animated');
+        
+        
+        submitBtn.classList.add('animate');
+        setTimeout(() => {
+            submitBtn.classList.remove('animate');
+        }, 3000); 
+    };
+
+    
+    openBuyButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            const plan = e.target.closest('.tabs-content__plan');
+            const title = plan.querySelector('.tabs-content__title').textContent;
+            const period = plan.querySelector('.tabs-content__period').textContent;
+            const price = plan.querySelector('.tabs-content__price-bg').textContent;
+
+            openModal(title, period, price);
         });
     });
-    
-    closBuyButton.addEventListener('click', () => {        
-        buyModal.close();
-        buyModal.classList.remove('is-animated');
-    });
-    
-    buyModal.addEventListener('submit', () => {        
-        buyModal.close();
-        buyModal.classList.remove('is-animated');
-    });
 
-    buyModal.addEventListener('click', (e) => {
-        const modal = e.currentTarget;
-        const isClickOnBackDrop = e.target == modal;
     
-        if (isClickOnBackDrop) {            
-            modal.close();
-            buyModal.classList.remove('is-animated');
+    const closeModal = () => {
+        buyModal.close();
+        buyModal.classList.remove('is-animated');
+    };
+
+    closeModalButton.addEventListener('click', closeModal);
+    buyModal.addEventListener('submit', closeModal);
+    
+    buyModal.addEventListener('click', (e) => {
+        if (e.target === buyModal) {
+            closeModal();
         }
     });
+
     
     const phoneInputs = document.querySelectorAll('input[type="tel"]');
-    const phoneMask = new Inputmask('+7 (999) 999-99-99');
-    phoneMask.mask(phoneInputs);
+    new Inputmask('+7 (999) 999-99-99').mask(phoneInputs);
 
     const emailInput = document.querySelector('input[type="email"]');
-    const emailMask = new Inputmask({
-        alias: 'email',
-    });
-    emailMask.mask(emailInput); 
-
-    
-
-    // phoneInputs.forEach(input => {
-    //     input.addEventListener("focus", () => {
-    //         input.nextElementSibling.classList.add("shifted");
-    //     });
-    //     input.addEventListener("blur", () => {
-    //         if (input.value === '') {
-    //             input.nextElementSibling.classList.remove("shifted");
-    //         }
-    //     });
-    // });
-    
-    
-}   
-
+    new Inputmask({ alias: 'email' }).mask(emailInput);
+}
 
 
 
