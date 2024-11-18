@@ -10,6 +10,8 @@ $tablet-s: 970px;
 
 $mobile: 785px;
 
+$mobile-m: 720px;
+
 $mobile-s: 648px;
 
 $mobile-ss: 410px;
@@ -47,6 +49,12 @@ $mobile-ss: 410px;
 
 @mixin mobile {
     @media (max-width: $mobile) {
+        @content;
+    }
+}
+
+@mixin mobile-m {
+    @media (max-width: $mobile-m) {
         @content;
     }
 }
