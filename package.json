@@ -16,6 +16,7 @@
     "vite": "^5.4.8"
   },
   "dependencies": {
-    "inputmask": "^5.0.9"
+    "@splidejs/splide": "^4.1.4",
+    "inputmask": "^5.0.9"    
   }
 }

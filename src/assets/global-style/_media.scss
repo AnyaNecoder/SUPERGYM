@@ -12,6 +12,8 @@ $mobile: 785px;
 
 $mobile-s: 648px;
 
+$mobile-ss: 410px;
+
 
 @mixin desktop-m {
     @media (max-width: $desktop-m) {
@@ -51,6 +53,12 @@ $mobile-s: 648px;
 
 @mixin mobile-s {
     @media (max-width: $mobile-s) {
+        @content;
+    }
+}
+
+@mixin mobile-ss {
+    @media (max-width: $mobile-ss) {
         @content;
     }
 }

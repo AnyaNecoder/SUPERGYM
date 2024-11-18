@@ -41,14 +41,6 @@ export const Tabs = (tabs) => {
         
         priceElement.appendChild(priceBg);        
     });
-  
-  
-
-
-
-
-
-
 }
 
 

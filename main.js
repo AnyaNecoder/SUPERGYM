@@ -3,6 +3,7 @@ import './src/assets/global-style/style.scss';
 import { Equipment } from './src/components/Equipment/equipment';
 import { Tabs } from './src/components/Tabs/tabs';
 import { Popup } from './src/components/Popup/popup';
+import { InstructorSlider } from "./src/components/Instructors/instructors";
 
 
 
@@ -17,5 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     Popup();
 
-});
+    InstructorSlider();
 
+});
