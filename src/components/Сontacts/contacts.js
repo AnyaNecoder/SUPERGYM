@@ -28,12 +28,11 @@ const validateName = (value) => {
     if (/^\d/.test(value)) return "Пожалуйста, вводите только буквы.";
     if ((value.match(/'/g) || []).length > 1) return "Допускается не более одного апострофа.";
     if (value.length > 15) return "Допускается не более 15 символов.";
-      return ""; // Если ошибок нет
+    return ""; 
 };
 
 const showError = (message) => {
-    nameError.textContent = message;
-    nameError.style.color = "red";
+    nameError.textContent = message;    
 };
     
 const clearError = () => {
@@ -53,7 +52,7 @@ const blockInput = () => {
             clearInterval(blockTimeout);
             nameInput.disabled = false;
             clearError();
-          invalidAttempts = 0; 
+            invalidAttempts = 0; 
         }
     }, 1000);
 };
