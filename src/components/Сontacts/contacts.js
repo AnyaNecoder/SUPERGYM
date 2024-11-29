@@ -89,7 +89,7 @@ const handleSubmit = (event) => {
             clearError();
         }
         } else {
-            alert("Форма успешно отправлена!");
+            alert("Спасибо! Наш администратор перезвонит вам в ближайшее время.");
             form.reset();
             clearError();
             invalidAttempts = 0; 
