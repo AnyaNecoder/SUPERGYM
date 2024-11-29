@@ -1,4 +1,4 @@
-export const  pulseTitle = () => {
+export const  trainingForm = () => {
 
 const title = document.querySelector('.free-training__title'); 
 const observer = new IntersectionObserver((entries) => { 
