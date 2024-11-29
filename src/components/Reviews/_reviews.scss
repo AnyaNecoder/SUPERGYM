@@ -1,0 +1,141 @@
+.reviews {
+    padding-top: 0;        
+    
+    &__inner {        
+        max-width: 560px;
+        margin-inline: auto;
+        position: relative;               
+        // background-color: rgba(137, 154, 206, 0.2);
+        
+        
+        @include mobile-m {
+            max-width: 390px;
+        }
+
+        @include mobile-s {
+            max-width: 226px;                        
+        }
+    }
+
+    &__slider {               
+        width: 100%;                
+        overflow: hidden;
+        // box-shadow: 0 0 40px 0 rgba(28, 51, 116, 0.2);       
+        
+    }    
+
+    &__title {
+        margin-bottom: 60px;
+        text-align: center;
+        
+        
+        @include mobile {
+            margin-bottom: 45px;
+        }
+    }
+
+    
+    &__item.swiper-slide {
+        width: 100%;        
+        display: grid;
+        grid-template-columns: auto 1fr;                                        
+        gap: 15px 28px;
+        background-color: var( --color-dark-blue-accent);
+        padding: 62px;
+        color: var(--color-light);
+        
+        
+        @include mobile-m {
+            padding: 40px 25px;
+            gap: 20px 15px;
+        }        
+    }    
+
+    &__image-wrapper {
+        grid-column: 1;
+        grid-row: 1 / 3;
+        width: 80px;        
+        aspect-ratio: 1;        
+        
+        
+        @include mobile-s {
+            width: 68px;
+            grid-row: 1;
+            margin-left: 18px;            
+        }
+
+        & img {           
+            width: 100%;
+            height: auto;
+            object-fit: cover;            
+        }
+    }
+    
+
+    &__subtitle {        
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 1;
+        grid-column: 2;
+        grid-row: 1;
+        font-style: normal;
+        
+
+        @include mobile-s {
+            line-height: 1.3;
+            align-self: center;                                  
+        }
+    }
+
+    &__text {
+        grid-column: 2;
+        grid-row: 2;
+        line-height: 1.4;
+        
+        
+        @include mobile-s {
+            line-height: 1.3;
+            grid-column: 1 / 3;
+            text-align: center;                       
+        }
+    }
+}
+
+.swiper__arrow-prev,
+.swiper__arrow-next {
+    position: absolute;
+    z-index: 1;       
+    background: transparent;
+    color: #AFAFAF;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    top: 50%;
+    transform: translateY(-50%);         
+}
+
+.swiper__arrow-prev svg,
+.swiper__arrow-next svg {
+
+    @include mobile-ss {
+        width: 10px;
+        height: 19px;
+    }    
+}
+
+.swiper__arrow-prev {
+    left: -50px;
+    
+    @include mobile-ss {
+        left: -35px;
+    }
+}
+
+.swiper__arrow-next {
+    right: -50px;
+
+    @include mobile-ss {
+        right: -35px;
+    }
+}
+

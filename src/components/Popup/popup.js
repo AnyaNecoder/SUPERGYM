@@ -56,7 +56,7 @@ export const Popup = () => {
     const phoneInputs = document.querySelectorAll('input[type="tel"]');
     new Inputmask('+7 (999) 999-99-99').mask(phoneInputs);
 
-    const emailInput = document.querySelector('input[type="email"]');
+    const emailInput = document.querySelectorAll('input[type="email"]');
     new Inputmask({ alias: 'email' }).mask(emailInput);
 }
 

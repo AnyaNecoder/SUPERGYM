@@ -1,5 +1,7 @@
 .advantages {
 
+    perspective: 1200px;//
+
     &__title {
         text-align: center;
         margin-bottom: 79px;
@@ -73,7 +75,7 @@
         margin: 0;        
         font-weight: 700;
         font-size: 71px;        
-        background: linear-gradient(142.51deg, #d10a42 0%, #0041ca 75%);;
+        background: linear-gradient(142.51deg, #d10a42 0%, #0041ca 75%);
         color: transparent;
         background-clip: text;
         line-height: 60px;
@@ -111,6 +113,15 @@
         background-color: var(--color-dark-blue-accent);
         color: var(--color-light);
         text-align: center;
+        transition: transform 0.4s cubic-bezier(.165,.84,.44,1);
+
+        @include hover {
+            transform-style: preserve-3d;            
+            overflow: hidden;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
+        }
+
+        
 
 
         

@@ -1,0 +1,134 @@
+.footer {
+    background-color: var(--color-dark);
+
+    &__inner {
+        padding-block: 42px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;        
+
+        
+        @include mobile-m {
+            flex-direction: column;
+            row-gap: 40px;
+        }
+        
+        @include mobile-s {
+            align-items: flex-start; 
+        }
+    }
+
+    &__navigation-wrapper {        
+        flex-grow: 1;        
+        max-width: 796px;       
+        
+        
+        @include desktop {
+            max-width: 535px;
+        }
+
+        @include mobile-m {
+            flex-direction: column;
+            row-gap: 40px;
+        }
+    }
+
+    &__logo {
+        flex-grow: 1;
+        align-self: end;
+        margin-right: 22px;
+
+        @include mobile-ss {
+            margin-right: 0;
+        }                
+    }
+
+    &__logo svg {    
+
+        @include tablet-s {
+            width: 82px;
+            height: 18px;
+        }
+
+        @include mobile-ss {
+            width: 68px;
+            height: 15px;
+        }
+    }
+
+    &__soc1al-list {        
+        display: flex;
+        align-items: center;
+        column-gap: 25px;
+
+
+        @include mobile {
+            column-gap: 20px;
+        }
+        
+        @include mobile-m {
+            column-gap: 35px;
+        }
+    }
+
+    &__soc1al-item {
+        transition-duration: var(--transition-duration);
+
+        @include hover {
+            opacity: 0.8;
+        }
+    }
+}
+
+.soc1al-link--vk svg {
+    @include mobile-m {
+        width: 32px;
+        height: 17px;
+    }
+}
+
+.soc1al-link--inst svg {
+    @include mobile-m {
+        width: 27px;
+        height: 27px;
+    }
+}
+
+.soc1al-link--fb svg {
+    @include mobile-m {
+        width: 14px;
+        height: 27px;
+    }
+}
+
+.menu {    
+    
+    &__list {
+        display: flex;
+        align-items: center;
+        column-gap: 40px;
+
+
+        @include mobile {
+            column-gap: 30px;
+        }
+
+        @include mobile-s {
+            display: grid;
+            grid-template-rows: repeat(3, auto);
+            gap: 15px 70px;
+            grid-auto-flow: column; 
+        }
+    }
+
+    &__item {
+        color: var(--color-light);
+        font-size: 14px;
+        padding-block: 5px;
+        transition-duration: var(--transition-duration);
+
+        @include hover {
+            color: var(--color-blue);
+        }
+    }
+}

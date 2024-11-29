@@ -157,7 +157,7 @@
 }
 
 .splide__arrow.splide__arrow--prev {   
-    left: -5%;
+    left: -4%;
 
     @include mobile {
         left: -2%;
@@ -173,7 +173,7 @@
 }
 
 .splide__arrow.splide__arrow--next {    
-    right: -5%;
+    right: -4%;
 
     @include mobile {
         right: -2%;
