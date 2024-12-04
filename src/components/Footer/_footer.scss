@@ -1,12 +1,34 @@
+// @keyframes holographic {
+//     0% {
+//         background-position: 0% 50%;
+//     }
+//     50% {
+//         background-position: 100% 50%;
+//     }
+//     100% {
+//         background-position: 0% 50%;
+//     }
+// }
+
+
 .footer {
     background-color: var(--color-dark);
+    // background: linear-gradient(45deg, rgb(3, 10, 26) 48%, rgb(24, 25, 39) 50%);
+    background-size: 200% 200%; //
+    animation: holographic 5s infinite; //
 
     &__inner {
         padding-block: 42px;
-        display: flex;
+        display: flex;        
         justify-content: space-between;
-        align-items: center;        
+        align-items: center;
+        column-gap: 43px;
 
+
+        
+        @include mobile {
+            padding-inline: 15px;
+        }
         
         @include mobile-m {
             flex-direction: column;
@@ -14,17 +36,19 @@
         }
         
         @include mobile-s {
-            align-items: flex-start; 
+            align-items: flex-start;
+            padding-inline: 0; 
         }
     }
 
     &__navigation-wrapper {        
         flex-grow: 1;        
-        max-width: 796px;       
+        max-width: 50rem;       
         
         
+
         @include desktop {
-            max-width: 535px;
+            max-width: 33rem;
         }
 
         @include mobile-m {
@@ -34,16 +58,18 @@
     }
 
     &__logo {
-        flex-grow: 1;
-        align-self: end;
-        margin-right: 22px;
+        flex-grow: 1;        
+        align-self: flex-end;     
+        margin-right: 32px;
+
+
 
         @include mobile-ss {
             margin-right: 0;
         }                
     }
 
-    &__logo svg {    
+    &__logo svg {  
 
         @include tablet-s {
             width: 82px;
@@ -56,10 +82,11 @@
         }
     }
 
-    &__soc1al-list {        
-        display: flex;
+    &__soc1al-list {                        
+        display: flex;        
         align-items: center;
         column-gap: 25px;
+
 
 
         @include mobile {
@@ -103,11 +130,12 @@
 
 .menu {    
     
-    &__list {
-        display: flex;
-        align-items: center;
+    &__list {        
+        display: flex;                
+        align-items: center;        
         column-gap: 40px;
 
+        
 
         @include mobile {
             column-gap: 30px;

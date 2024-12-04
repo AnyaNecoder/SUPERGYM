@@ -547,17 +547,23 @@
       <section class="info-blocks">
         <div class="free-training__wrapper">
           <section class="free-training">
-            <h2 class="free-training__title title">Бeсплатное занятие</h2>
-            <form class="free-training__form" action="" method="post">
+            <h2 class="free-training__title title js-pulse-title">Бeсплатное занятие</h2>
+            <form class="free-training__form" action="" method="post" data-js-form>
               <div class="free-training__input-wrapper">
-                <input class="free-training__input" type="text" id="free-first-name" name="firstName" title="Введите ваше имя" required>
+                <input class="free-training__input" type="text" 
+                  id="free-first-name" name="firstName" 
+                  title="Введите ваше имя" 
+                  required 
+                  aria-errormessage="name-error"
+                  minlength="2"
+                  maxlength="15">
                 <label class="free-training__user-name" for="free-first-name">Имя</label>  
               </div>
               <div class="free-training__input-wrapper">
                 <input class="free-training__input" type="tel" id="free-phone" name="phone" title="Введите номер телефона" required>
                 <label class="free-training__user-phone" for="free-phone">Телефон</label>
               </div>
-              <span class="free-training__error"></span>              
+              <span class="free-training__error" id="name-error" data-js-form-field-errors></span>              
               <button class="free-training__submit-btn button button--border-light" type="submit">Отправить</button>
             </form>
           </section>
